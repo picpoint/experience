@@ -1,6 +1,9 @@
 @import "smart-grid.less";
 @import "var.less";
 @import "fonts.less";
+@import "font-awesome.less";
+@import "icons.less";
+@fa-font-path:   "../fonts";
 
 .reset();
 .debug {
@@ -13,7 +16,6 @@
 
 body {
 	box-sizing: border-box;
-	border: @border;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
@@ -21,8 +23,58 @@ body {
 }
 
 .chatline {
-	border: @border;
-	width: 400px;
-	height: 600px;
+	width: 350px;
+	height: 500px;
 	margin-right: 50px;
+	border-radius: 10px 30px 0 0;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	&__head {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+		height: 7vh;
+		background: linear-gradient(to right, @bkgdark, @bkglight);
+		border-radius: 10px 30px 0 0;
+		span {
+			padding-top: 10px;
+			flex-grow: 1;
+			color: azure;
+		}
+	}
+	&__body {
+		height: 35vh;
+		border-bottom: 1px solid @bkglight;
+		background: @bkggray;
+	}
+	&__footer {
+		display: flex;
+		align-items: center;
+		input {
+			border: none;
+			width: 100%;
+			height: 30px;
+			padding: 15px;
+			&:focus{
+				outline: none;
+			}
+		}
+		i {
+			font-size: 30px;
+			color: white;
+			padding: 10px;
+			margin-right: 10px;
+			background-color: green;
+			border-radius: 50%;
+		}
+	}
+	&__iconform{
+		display: flex;
+		margin-left: 5px;
+		i {
+			font-size: 25px;
+			padding: 15px;
+			color: darkgray;
+		}
+	}
 }
