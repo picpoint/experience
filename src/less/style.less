@@ -1,9 +1,9 @@
 @import "smart-grid.less";
 @import "var.less";
 @import "fonts.less";
-@import "font-awesome.less";
-@import "icons.less";
-@fa-font-path:   "../fonts";
+//@import "font-awesome.less";
+//@import "icons.less";
+//@fa-font-path:   "../fonts";
 
 .reset();
 .debug {
@@ -23,6 +23,10 @@ body {
 }
 
 .chatline {
+	//border: @border;
+	position: fixed;
+	right: 5px;
+	bottom: 0;
 	width: 350px;
 	height: 500px;
 	margin-right: 50px;
@@ -71,7 +75,9 @@ body {
 	&__iconform{
 		display: flex;
 		margin-left: 5px;
+		//border: @border;
 		i {
+			//border: @border;
 			font-size: 25px;
 			padding: 15px;
 			color: darkgray;
