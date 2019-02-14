@@ -14,18 +14,24 @@ head.addEventListener('mousedown', function (e) {
 	chatline.style.position = 'absolute';
 	getCoordinatsXY(e);
 	document.body.appendChild(chatline);
+
+	head.addEventListener('mousemove', function (e) {
+		getCoordinatsXY(e);
+	});
+
 });
 
 
-head.addEventListener('mousemove', function (e) {
-	getCoordinatsXY(e);
-});
-
-
-head.addEventListener('mouseup', function () {
+head.addEventListener('mouseup', function (e) {
+	chatline.style.position = 'fixed';
 	head.style.cursor = 'grab';
-	head.onmousemove = null;
-	//head.onmouseup = null;
+
+	//head.onmousemove = null;
+	head.addEventListener('mousemove', function (e) {
+		chatline.style.left = null;
+		chatline.style.top = null;
+	});
+
 });
 
 
