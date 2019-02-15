@@ -17,6 +17,7 @@ head.addEventListener('mousedown', function (e) {
 
 	head.addEventListener('mousemove', function (e) {
 		getCoordinatsXY(e);
+		e.stopPropagation();
 	});
 
 });
@@ -26,15 +27,15 @@ head.addEventListener('mouseup', function (e) {
 	chatline.style.position = 'fixed';
 	head.style.cursor = 'grab';
 
-	//head.onmousemove = null;
 	head.addEventListener('mousemove', function (e) {
-		chatline.style.left = null;
+		chatline.style.left = e.pageX - chatline.offsetWidth / 2 + 'px';
 		chatline.style.top = null;
+		e.stopPropagation();
 	});
-
 });
 
-
+/*
 chatline.ondragstart = function () {
 	return false;
 };
+*/
