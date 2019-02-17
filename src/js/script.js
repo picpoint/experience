@@ -4,15 +4,26 @@ var chatline = document.querySelector('.chatline');
 var getXY = function getCoordinatsXY (e) {
 	chatline.style.left = e.pageX - chatline.offsetWidth / 2 + 'px';
 	chatline.style.top = e.pageY - chatline.offsetHeight / 15 + 'px';
-	console.log('MD');
 }
 
-head.addEventListener('mousedown', function () {
+head.addEventListener('mousedown', function (e) {
 	head.style.cursor = 'grabbing';
+	var shiftX = e.pageX - getCoordsHeader(head).left;
+	var shiftY = e.pageY - getCoordsHeader(head).top;
 	document.addEventListener('mousemove', getXY);
+	
 });
 
 head.addEventListener('mouseup', function () {
 	head.style.cursor = 'grab';
 	document.removeEventListener('mousemove', getXY);
 });
+
+//ф-ия получения координат хедера
+function getCoordsHeader (elem) {
+	var boxHeader = elem.getBoundingClientRect();
+	return {
+		top: boxHeader.top + pageYOffset,
+		left: boxHeader.left + pageXOffset
+	}
+}
