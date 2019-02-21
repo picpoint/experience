@@ -5,13 +5,14 @@ var chatline = document.querySelector('.chatline');
 var getXY = function getCoordinatsXY (e) {
 	chatline.style.left = e.pageX - chatline.offsetWidth / 2 + 'px';
 	chatline.style.top = e.pageY - chatline.offsetHeight / 15 + 'px';
-}
+};
 
 head.addEventListener('mousedown', function (e) {
 	head.style.cursor = 'grabbing';
 	document.addEventListener('mousemove', getXY);
 });
 head.addEventListener('mousedown', chatlineEffect);
+head.addEventListener('mousemove', hideButtonClose);
 
 
 head.addEventListener('mouseup', function (e) {
@@ -31,6 +32,12 @@ function chatlineNoEffect () {
 	chatline.style.boxShadow = '0 9px 20px rgba(0,0,0,0.25), 0 7px 7px rgba(0,0,0,0.22)';
 	chatline.style.transition = 'ease-out 0.2s';
 }
+
+function hideButtonClose() {
+	var close = document.querySelector('.chatline__close');
+	close.style.display = 'block';
+}
+
 /*
 //ф-ия получения размера элемента и его позиции относительно окна
 function getCoordsHeader (elem) {
