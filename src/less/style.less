@@ -25,7 +25,7 @@ body {
 	//border: @border;
 	position: fixed;
 	right: 5px;
-	bottom: 0;
+	bottom: -47%;
 	width: 350px;
 	height: 500px;
 	margin-right: 50px;
@@ -48,7 +48,7 @@ body {
 		}
 	}
 	&__close {
-		border: 1px solid white;
+		//border: @border;
 		height: 20px;
 		width: 20px;
 		border-radius: 100%;
@@ -58,9 +58,9 @@ body {
 		cursor: pointer;
 		text-align: center;
 		box-shadow: 0 7px 15px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22);
-		transform: rotate(45deg);
+		//transform: rotate(45deg);
 		display: none;
-		transition = 'ease-out 1s';
+		transition: ease-in-out	0.5s;
 		span {
 			font-size: 18px;
 		}
@@ -95,12 +95,16 @@ body {
 	&__iconform{
 		display: flex;
 		margin-left: 5px;
-		//border: @border;
 		i {
-			//border: @border;
 			font-size: 25px;
 			padding: 15px;
 			color: darkgray;
 		}
 	}
+}
+
+.openbox {
+	position: fixed;
+	right: 5px;
+	bottom: 10px;
 }

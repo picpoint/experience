@@ -1,6 +1,6 @@
-
 var head = document.querySelector('.chatline__head');
 var chatline = document.querySelector('.chatline');
+var chatlineClose = document.querySelector('.chatline__close');
 
 var getXY = function getCoordinatsXY (e) {
 	chatline.style.left = e.pageX - chatline.offsetWidth / 2 + 'px';
@@ -20,6 +20,8 @@ head.addEventListener('mouseup', function (e) {
 	document.removeEventListener('mousemove', getXY);
 });
 head.addEventListener('mouseup', chatlineNoEffect);
+chatlineClose.addEventListener('mouseup', openCloseChatline);
+
 
 function chatlineEffect () {
 	chatline.style.transform = 'scale(1.02, 1.02)';
@@ -34,9 +36,20 @@ function chatlineNoEffect () {
 }
 
 function hideButtonClose() {
-	var close = document.querySelector('.chatline__close');
-	close.style.display = 'block';
+	chatlineClose.style.display = 'block';
 }
+
+
+function openCloseChatline () {
+	if (chatlineClose) {
+		chatline.classList.toggle('openbox');
+		chatlineClose.style.transform = 'rotate(45deg)';
+	}
+
+}
+
+
+
 
 /*
 //ф-ия получения размера элемента и его позиции относительно окна
