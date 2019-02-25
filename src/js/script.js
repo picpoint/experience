@@ -24,7 +24,7 @@ chatlineClose.addEventListener('mouseup', openCloseChatline);
 
 
 function chatlineEffect () {
-	chatline.style.transform = 'scale(1.02, 1.02)';
+	chatline.style.transform = 'scale(1.01, 1.01)';
 	chatline.style.boxShadow = '0 55px 70px rgba(0,0,0,0.25), 0 45px 100px rgba(0,0,0,0.15)';
 	chatline.style.transition = 'ease-out 0.2s';
 }
@@ -41,11 +41,8 @@ function hideButtonClose() {
 
 
 function openCloseChatline () {
-	if (chatlineClose) {
-		chatline.classList.toggle('openbox');
-		chatlineClose.style.transform = 'rotate(45deg)';
-	}
-
+	chatline.classList.toggle('openbox');
+	chatlineClose.classList.toggle('rotate');
 }
 
 

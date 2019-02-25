@@ -25,7 +25,7 @@ body {
 	//border: @border;
 	position: fixed;
 	right: 5px;
-	bottom: -47%;
+	bottom: -40%;
 	width: 350px;
 	height: 500px;
 	margin-right: 50px;
@@ -58,9 +58,9 @@ body {
 		cursor: pointer;
 		text-align: center;
 		box-shadow: 0 7px 15px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22);
-		//transform: rotate(45deg);
 		display: none;
 		transition: ease-in-out	0.5s;
+		transform: rotate(0deg);
 		span {
 			font-size: 18px;
 		}
@@ -104,7 +104,10 @@ body {
 }
 
 .openbox {
-	position: fixed;
 	right: 5px;
 	bottom: 10px;
+}
+
+.rotate {
+	transform: rotate(45deg);
 }
