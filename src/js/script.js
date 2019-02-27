@@ -21,7 +21,7 @@ head.addEventListener('mouseup', function (e) {
 });
 head.addEventListener('mouseup', chatlineNoEffect);
 chatlineClose.addEventListener('mouseup', openCloseChatline);
-
+head.addEventListener('mousedown', removeClassopenbox);
 
 function chatlineEffect () {
 	chatline.style.transform = 'scale(1.01, 1.01)';
@@ -44,6 +44,11 @@ function openCloseChatline () {
 	chatline.classList.toggle('openbox');
 	chatlineClose.classList.toggle('rotate');
 }
+
+function removeClassopenbox () {
+	chatline.classList.remove('openbox');
+}
+
 
 
 
