@@ -45,7 +45,9 @@ head.addEventListener('mouseup', chatlineNoEffect);
 // событие mouseup на кнопке-крестик
 // ф-ия openCloseChatline переключает класс openbox для показа/скрытия формы
 // а так же для вращения кнопки-крестика
-chatlineClose.addEventListener('mouseup', openCloseChatline);
+chatlineClose.addEventListener('click', openCloseChatline);
+
+
 
 // ф-ия ждя добавления эффекта масштаба и тени
 function chatlineEffect () {
@@ -72,10 +74,7 @@ function openCloseChatline () {
 	chatlineClose.classList.toggle('rotate');
 }
 
-// ф-ия для удаления класса openbox
-function removeClassopenbox () {
-	chatline.classList.remove('openbox');
-}
+
 
 
 
