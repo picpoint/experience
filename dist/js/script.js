@@ -69,9 +69,21 @@ function hideButtonClose() {
 }
 
 // ф-ия для переключения класса openbox и вращения кнопки-крестик
-function openCloseChatline () {
+function openCloseChatline (e) {
 	chatline.classList.toggle('openbox');
 	chatlineClose.classList.toggle('rotate');
+	console.log(e.target);
+	console.log(e.target.tagName);
+	console.log(e.target.classList);
+	console.log(e.currentTarget);
+	console.log(e.currentTarget.classList);
+
+
+	if ( (e.target.tagName === 'SPAN') && (e.currentTarget.classList.value === 'chatline__close rotate') ) {
+		chatline.style.bottom = '0';
+	}
+
+
 }
 
 
