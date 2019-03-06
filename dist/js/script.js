@@ -77,12 +77,18 @@ function openCloseChatline (e) {
 	console.log(e.target.classList);
 	console.log(e.currentTarget);
 	console.log(e.currentTarget.classList);
+	console.log('------------------------');
 
-
-	if ( (e.target.tagName === 'SPAN') && (e.currentTarget.classList.value === 'chatline__close rotate') ) {
+	if ( (e.target.tagName == 'SPAN') && (e.target.parentNode.classList == 'chatline__close') || (e.currentTarget.classList.value == 'chatline__close')) {
+		chatline.style.border = '1px solid green';
 		chatline.style.bottom = '0';
+	} else if (e.currentTarget.classList.value == 'chatline__close rotate' ){
+		chatline.style.border = '1px solid red';
+		chatline.style.bottom = '500px';
+		chatline.style.right = '5px';
+		chatline.style.top = '';
+		chatline.style.left = '';
 	}
-
 
 }
 
