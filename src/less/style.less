@@ -21,6 +21,7 @@ body {
 	font-family: 'Play', sans-serif;
 }
 
+// ЧАТ ONLINE START
 .chatline {
 	//border: @border;
 	position: fixed;
@@ -114,6 +115,70 @@ body {
 		}
 	}
 }
+// ЧАТ ONLINE STOP
+
+
+// ------------------------------
+
+
+// ЧАТ OFFLINE START
+
+.chatoff {
+	position: fixed;
+	left: 80%;
+	top: 45%;
+	//border: @border;
+	width: 350px;
+	height: 500px;
+	border-radius: 10px 30px 0 0;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	&__head {
+		display: flex;
+		align-items: center;
+		height: 50px;
+		background-color: @bkgdark;
+		border-radius: 10px 30px 0 0;
+		color: white;
+		i {
+			//border: @border;
+			font-size: 1.3rem;
+			width: 20%;
+			text-align: center;
+		}
+		span {
+			//border: @border;
+			width: 60%;
+			text-align: center;
+			font-size: 1.2rem;
+		}
+	}
+	&__messageoffline {
+		background-color: #C9DDFF;
+		margin: 17px;
+		span {
+			//border: @border;
+			display: block;
+			line-height: 1.5;
+			padding: 10px;
+		}
+	}
+	&__triangle {
+		//border: @border;
+		position: absolute;
+		top: 77px;
+		left: 10px;
+		width: 20px;
+		height: 20px;
+		background-color: #c9ddff;
+		transform: rotate(45deg);
+		z-index: -1;
+	}
+}
+
+// ЧАТ OFFLINE STOP
+
+
+
 
 .openbox {
 	position: fixed;
