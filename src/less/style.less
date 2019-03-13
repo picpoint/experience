@@ -12,6 +12,19 @@
 	.wrapper();
 }
 
+.mixinfields {
+	//border: @border;
+	display: flex;
+	justify-content: center;
+	margin: 15px 0;
+	input {
+		width: 87%;
+		height: 30px;
+		border-radius: 4px;
+		padding: 2px;
+	}
+}
+
 body {
 	box-sizing: border-box;
 	display: flex;
@@ -172,6 +185,19 @@ body {
 		background-color: #c9ddff;
 		transform: rotate(45deg);
 		z-index: -1;
+	}
+	&__fieldname {
+		.mixinfields();
+	}
+	&__fieldemail {
+		.mixinfields();
+	}
+	&__fieldmessage {
+		.mixinfields();
+	}
+	&__send {
+		border: @border;
+		
 	}
 }
 
