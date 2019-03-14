@@ -54,7 +54,7 @@ body {
 	//border: @border;
 	position: fixed;
 	left: 80%;
-	top: 93%;
+	top: 40%;
 	width: 350px;
 	height: 500px;
 	border-radius: 10px 30px 0 0;
@@ -111,6 +111,30 @@ body {
 		border-bottom: 1px solid @bkglight;
 		background: @bkggray;
 	}
+	&__operator {
+		//border: @border;
+		margin: 10px;
+		span {
+			display: inline-block;
+			background-color: lightgray;
+			padding: 15px 20px;
+			margin: 3px 7px;
+			border-radius: 10px;
+		}
+	}
+	&__user {
+		//border: @border;
+		margin: 10px;
+		span {
+			display: inline-block;
+			float: right;
+			color: white;
+			background-color: green;
+			padding: 15px 20px;
+			margin: 3px 7px;
+			border-radius: 10px;
+		}
+	}
 	&__footer {
 		display: flex;
 		align-items: center;
@@ -152,10 +176,10 @@ body {
 // ЧАТ OFFLINE START
 
 .chatoff {
+	display: none;
 	position: fixed;
 	left: 80%;
 	top: 45%;
-	//border: @border;
 	width: 350px;
 	height: 500px;
 	border-radius: 10px 30px 0 0;
@@ -240,4 +264,10 @@ body {
 
 .rotate {
 	transform: rotate(0deg);
+}
+
+.operatorOn {
+	position: fixed;
+	left: 300px;
+	top: 200px;
 }
