@@ -9,16 +9,30 @@
 </head>
 <body>
 
-<!-- ЧАТ ONLINE START -->
-<label for="switchForm" class="operatorOn">
-	<input type="checkbox" id="switchForm" checked>
-	<h3>ОПЕРАТОР НА СВЯЗИ!!!</h3>
-</label>
+<!-- ПЕРЕКЛЮЧАТЕЛЬ ФОРМ START -->
+<div class="operatorOn">
+	<label for="chatlineradio">
+		<input type="radio" name="chatform" id="chatlineradio">Оператор онлайн
+	</label>
+	<label for="chatoffradio">
+		<input type="radio" name="chatform" id="chatoffradio">Оператор офлайн
+	</label>
+	<label for="chatmanagerradio">
+		<input type="radio" name="chatform" id="chatmanagerradio">Напишите нам
+	</label>
+</div>
+<!-- ПЕРЕКЛЮЧАТЕЛЬ ФОРМ STOP -->
 
+
+<!-- ------------------------ -->
+
+
+<!-- ЧАТ ONLINE START -->
 <div class="chatline">
 	<div class="chatline__close">
 		<span>+</span>
 	</div>
+
 	<div class="chatline__head">
 		<span>Напишите нам сообщение!</span>
 		<span>Мы онлайн</span>
@@ -29,6 +43,7 @@
 			<span>Добрый вечер)</span>
 			<span>Чем могу быть полезен?</span>
 		</div>
+
 		<div class="chatline__user">
 			<span>Драсте!</span>
 			<span>Вот ищу один товар, не знаю как называется, но смысл как бы в чём, берёшь терку и чтоб пальцы не порезать морковку вставляешь в держатель</span>
@@ -45,13 +60,13 @@
 		<i class="fa fa-smile-o" aria-hidden="true"></i>
 	</div>
 </div>
-
 <!-- ЧАТ ONLINE STOP -->
+
 
 <!-- ------------------------------  -->
 
+
 <!--  ЧАТ OFFLINE START -->
-<!-- -->
 <div class="chatoff">
 	<div class="chatoff__head">
 		<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -67,22 +82,58 @@
 		<i class="fa fa-user" aria-hidden="true"></i>
 		<input type="text" placeholder="Имя ...">
 	</div>
+
 	<div class="chatoff__fieldemail">
 		<i class="fa fa-envelope" aria-hidden="true"></i>
 		<input type="text" placeholder="Email ...">
 	</div>
+
 	<div class="chatoff__fieldmessage">
 		<i class="fa fa-pencil" aria-hidden="true"></i>
 		<input type="text" placeholder="Введите сообщение ...">
 	</div>
+
 	<div class="chatoff__send">
 		<form action="manager.php">
 			<input type="submit" value="Отправить">
 		</form>
 	</div>
 </div>
-<!-- -->
 <!--  ЧАТ OFFLINE STOP  -->
+
+
+<!--  --------------------------   -->
+
+
+<!--  ЧАТ MANAGER START  -->
+<div class="chatmanager">
+	<div class="chatmanager__head">
+		<i class="fa fa-comments" aria-hidden="true"></i>
+		<span>Напишите мне, я онлайн!</span>
+	</div>
+
+	<div class="chatmanager__message">
+		<div class="chatmanager__triangle"></div>
+		<span>У Вас есть вопросы?</span>
+	</div>
+
+	<div class="chatmanager__fieldname">
+		<i class="fa fa-user" aria-hidden="true"></i>
+		<input type="text" placeholder="Имя ...">
+	</div>
+
+	<div class="chatmanager__fieldmessage">
+		<input type="text" placeholder="Введите сообщение ...">
+	</div>
+
+	<div class="chatmanager__send">
+		<form action="manager.php">
+			<input type="submit" value="Отправить">
+		</form>
+	</div>
+</div>
+<!--  ЧАТ MANAGER STOP  -->
+
 
 <script src="js/script.js"></script>
 <script src="js/checkedForm.js"></script>

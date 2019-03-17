@@ -12,6 +12,7 @@
 	.wrapper();
 }
 
+// миксин полей ввода со значками fa-
 .mixinfields {
 	//border: @border;
 	display: flex;
@@ -30,15 +31,14 @@
 		line-height: 37px;
 		text-align: center;
 		margin-right: -30px;
-		//position: relative;
 		z-index: 1;
-		//float: left;
 		color: gray;
 	}
 	i.fa + input {
 		padding-left: 30px;
 	}
 }
+
 
 body {
 	box-sizing: border-box;
@@ -49,9 +49,11 @@ body {
 	font-family: 'Play', sans-serif;
 }
 
+
 // ЧАТ ONLINE START
 .chatline {
 	//border: @border;
+	display: none;
 	position: fixed;
 	left: 80%;
 	top: 40%;
@@ -174,7 +176,6 @@ body {
 
 
 // ЧАТ OFFLINE START
-
 .chatoff {
 	display: none;
 	position: fixed;
@@ -250,9 +251,89 @@ body {
 		}
 	}
 }
-
 // ЧАТ OFFLINE STOP
 
+
+// ------------------------------
+
+
+//  ЧАТ MANAGER START
+.chatmanager {
+	display: none;
+	position: fixed;
+	left: 80%;
+	top: 45%;
+	width: 350px;
+	height: 500px;
+	border-radius: 10px 30px 0 0;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	&__head {
+		display: flex;
+		align-items: center;
+		height: 50px;
+		background-color: @bkgdark;
+		border-radius: 10px 30px 0 0;
+		color: white;
+		i {
+			//border: @border;
+			font-size: 1.3rem;
+			width: 20%;
+			text-align: center;
+		}
+		span {
+			//border: @border;
+			width: 60%;
+			text-align: center;
+			font-size: 1rem;
+		}
+	}
+	&__message {
+		background-color: #C9DDFF;
+		margin: 17px;
+		span {
+			//border: @border;
+			display: block;
+			line-height: 1.5;
+			padding: 10px;
+		}
+	}
+	&__triangle {
+		//border: @border;
+		position: absolute;
+		top: 77px;
+		left: 10px;
+		width: 20px;
+		height: 20px;
+		background-color: #c9ddff;
+		transform: rotate(45deg);
+		z-index: -1;
+	}
+	&__fieldname {
+		.mixinfields();
+	}
+	&__fieldmessage {
+		.mixinfields();
+		input {
+			width: 88%;
+		}
+	}
+	&__send {
+		//border: @border;
+		display: inline-block;
+		position: relative;
+		top: 204px;
+		left: 55%;
+		input {
+			width: 130px;
+			height: 40px;
+			border-radius: 5px;
+			background-color: @bkgdark;
+			color: white;
+			border: none;
+		}
+	}
+}
+//  ЧАТ MANAGER STOP
 
 
 
@@ -268,6 +349,11 @@ body {
 
 .operatorOn {
 	position: fixed;
+	display: flex;
+	flex-direction: column;
 	left: 300px;
 	top: 200px;
+	label {
+		margin: 10px;
+	}
 }
