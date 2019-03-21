@@ -32,16 +32,20 @@ function validationChatmanager () {
 // ф-ия с регуляркой, которая ищет пробелы повторяющиеся 1 и более раз и заменяет их на один пробел
 // в форму chatoff
 function validationChatoff () {
-	chatoffname = chatoffname.value.replace(/\s+/g, ' ');
-	chatoffemail = chatoffemail.value.replace(/\s+/g, ' ');
-	chatoffmessage = chatoffmessage.value.replace(/\s+/g, ' ');
+	var reg = /^([0-9a-z_\.-]+)@([0-9a-z_\.-]+)\.([a-z]{2,7})$/;
+	chatoffname = chatoffname.value.replace(/\s+/g, ' ').trim();
+    chatoffemail = reg.test(chatoffemail.value);
+    if (chatoffemail == false) {
+    	console.log("Email is uncorrect");
+	}
+	chatoffmessage = chatoffmessage.value.replace(/\s+/g, ' ').trim();
 	console.log(chatoffname);
 	console.log(chatoffemail);
 	console.log(chatoffmessage);
 }
 
 // событие на кнопке "отправить" формы chatmanager
-btnsend.addEventListener('mousedown', validationChatmanager);
+btnsend.addEventListener('click', validationChatmanager);
 
 // // событие на кнопке "отправить" формы chatoff
-chatoffsend.addEventListener('mousedown', validationChatoff);
+chatoffsend.addEventListener('click', validationChatoff);
