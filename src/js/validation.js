@@ -34,9 +34,9 @@ function validationChatmanager () {
 function validationChatoff () {
 	var reg = /^([0-9a-z_\.-]+)@([0-9a-z_\.-]+)\.([a-z]{2,7})$/;
 	chatoffname = chatoffname.value.replace(/\s+/g, ' ').trim();
-    chatoffemail = reg.test(chatoffemail.value);
-    if (chatoffemail == false) {
-    	console.log("Email is uncorrect");
+  chatoffemail = reg.test(chatoffemail.value.trim());
+  if (chatoffemail == false) {
+  	console.log("Email is uncorrect");
 	}
 	chatoffmessage = chatoffmessage.value.replace(/\s+/g, ' ').trim();
 	console.log(chatoffname);
@@ -47,5 +47,5 @@ function validationChatoff () {
 // событие на кнопке "отправить" формы chatmanager
 btnsend.addEventListener('click', validationChatmanager);
 
-// // событие на кнопке "отправить" формы chatoff
+// событие на кнопке "отправить" формы chatoff
 chatoffsend.addEventListener('click', validationChatoff);
