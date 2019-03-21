@@ -20,6 +20,25 @@ var chatoffmessage = document.getElementById('chatoffmessage');
 var chatoffsend = document.getElementById('chatoffsend');
 
 
+function solidObj () {
+	var chatmanager = {
+		chatmanagername: 'chatmanagername',
+		chatmanagermessage: 'chatmanagermessage'
+	};
+	var chatoff = {
+		chatoffname: 'chatoffname',
+		chatoffemail: 'chatoffemail',
+		chatoffmessage: 'chatoffmessage'
+	}
+}
+
+function validFields (chatObj) {
+	for (var key in chatObj) {
+		
+	}
+}
+
+/*
 // ф-ия с регуляркой, которая ищет пробелы повторяющиеся 1 и более раз и заменяет их на один пробел
 // в форму chatmanager
 function validationChatmanager () {
@@ -28,7 +47,13 @@ function validationChatmanager () {
 	console.log(chatmanagername);
 	console.log(chatmanagermessage);
 }
+*/
 
+
+
+
+
+/*
 // ф-ия с регуляркой, которая ищет пробелы повторяющиеся 1 и более раз и заменяет их на один пробел
 // в форму chatoff
 function validationChatoff () {
@@ -43,6 +68,10 @@ function validationChatoff () {
 	console.log(chatoffemail);
 	console.log(chatoffmessage);
 }
+*/
+
+
+
 
 // событие на кнопке "отправить" формы chatmanager
 btnsend.addEventListener('click', validationChatmanager);
