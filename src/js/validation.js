@@ -35,12 +35,22 @@ function solidObj () {
 }
 
 function validFields (obj) {
-	for (var key in obj) {
-		obj[key] = obj[key].value.replace(/\s+/g, ' ').trim();
-        console.log(obj[key]);
-	}
-}
 
+	if (this.obj == this.chatoffObj) {
+		for (var key in this.chatoffObj) {
+			console.log(key);
+		}
+	}
+		/*
+		if (chatoffObj[key] == 'chatoffemail') {
+			var reg = /^([0-9a-z_\.-]+)@([0-9a-z_\.-]+)\.([a-z]{2,7})$/;
+			chatoffemail = reg.test(chatoffemail.value.trim());
+		}
+		obj[key] = obj[key].value.replace(/\s+/g, ' ').trim();
+	}
+	*/
+
+}
 
 
 chatoffsend.addEventListener('click', solidObj);
@@ -57,8 +67,6 @@ function validationChatmanager () {
 	console.log(chatmanagermessage);
 }
 */
-
-
 
 
 
