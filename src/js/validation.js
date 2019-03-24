@@ -37,9 +37,7 @@ function solidObj () {
 function validFields (obj) {
 
 	if (this.obj == this.chatoffObj) {
-		for (var key in this.chatoffObj) {
-			console.log(key);
-		}
+			console.log(this.chatoffObj);
 	}
 		/*
 		if (chatoffObj[key] == 'chatoffemail') {
@@ -55,6 +53,13 @@ function validFields (obj) {
 
 chatoffsend.addEventListener('click', solidObj);
 btnsend.addEventListener('click', solidObj);
+
+
+
+
+
+
+
 
 
 /*
