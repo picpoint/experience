@@ -30,8 +30,7 @@ function solidObj () {
 		'chatoffemail': chatoffemail,
 		'chatoffmessage': chatoffmessage
 	};
-	//validFields(chatmanager);
-	//console.log('------------------	');
+	validFields(chatmanager);
 	validFields(chatoffObj);
 }
 
@@ -39,11 +38,15 @@ function validFields (obj) {
 	var reg = /^([0-9a-z_\.-]+)@([0-9a-z_\.-]+)\.([a-z]{2,7})$/;
 
 	for (var key in obj) {
+		console.log('Before ->' + key + ' ' + obj[key].value);
+
 		if (key === 'chatoffemail') {
 			obj[key] = reg.test(obj[key].value);
+		} else {
+			obj[key] = obj[key].value.replace(/\s+/g, ' ').trim();
 		}
-		obj[key] = obj[key].value.replace(/\s+/g, ' ').trim();
-		console.log(key + ' ' + obj[key]);
+
+		console.log('After ->' + key + ' ' + obj[key]);
 	}
 }
 
