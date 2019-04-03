@@ -30,7 +30,7 @@ function solidObj () {
 		'chatoffemail': chatoffemail,
 		'chatoffmessage': chatoffmessage
 	};
-	validFields(chatmanager);
+	//validFields(chatmanager);
 	validFields(chatoffObj);
 }
 
@@ -38,65 +38,26 @@ function validFields (obj) {
 	var reg = /^([0-9a-z_\.-]+)@([0-9a-z_\.-]+)\.([a-z]{2,7})$/;
 
 	for (var key in obj) {
-		console.log('Before ->' + key + ' ' + obj[key].value);
-
-		if (key === 'chatoffemail') {
-			obj[key] = reg.test(obj[key].value);
+		if (!obj[key].value) {
+			obj[key].style.border = '1px solid red';
+			obj[key].value = 'Поле не заполнено';
+			setTimeout(function () {
+				for (var key in obj) {
+					obj[key].value = '';
+				}
+			}, 2000);
+		} else if (key === 'chatoffemail') {
+			obj[key].style.border = '1px solid gray';
+			console.log(reg.test(obj[key].value));
 		} else {
+			obj[key].style.border = '1px solid gray';
 			obj[key] = obj[key].value.replace(/\s+/g, ' ').trim();
+			console.log(key + '-' + obj[key]);
 		}
-
-		console.log('After ->' + key + ' ' + obj[key]);
 	}
-}
 
+
+}
 
 chatoffsend.addEventListener('click', solidObj);
 btnsend.addEventListener('click', solidObj);
-
-
-
-
-
-
-
-
-
-/*
-// ф-ия с регуляркой, которая ищет пробелы повторяющиеся 1 и более раз и заменяет их на один пробел
-// в форму chatmanager
-function validationChatmanager () {
-	chatmanagername = chatmanagername.value.replace(/\s+/g,' ');
-	chatmanagermessage = chatmanagermessage.value.replace(/\s+/g, ' ');
-	console.log(chatmanagername);
-	console.log(chatmanagermessage);
-}
-*/
-
-
-
-/*
-// ф-ия с регуляркой, которая ищет пробелы повторяющиеся 1 и более раз и заменяет их на один пробел
-// в форму chatoff
-function validationChatoff () {
-	var reg = /^([0-9a-z_\.-]+)@([0-9a-z_\.-]+)\.([a-z]{2,7})$/;
-	chatoffname = chatoffname.value.replace(/\s+/g, ' ').trim();
-  chatoffemail = reg.test(chatoffemail.value.trim());
-  if (chatoffemail == false) {
-  	console.log("Email is uncorrect");
-	}
-	chatoffmessage = chatoffmessage.value.replace(/\s+/g, ' ').trim();
-	console.log(chatoffname);
-	console.log(chatoffemail);
-	console.log(chatoffmessage);
-}
-*/
-
-
-
-
-// событие на кнопке "отправить" формы chatmanager
-//btnsend.addEventListener('click', validationChatmanager);
-
-// событие на кнопке "отправить" формы chatoff
-//chatoffsend.addEventListener('click', validationChatoff);
