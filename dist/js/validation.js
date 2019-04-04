@@ -30,17 +30,19 @@ function solidObj () {
 		'chatoffemail': chatoffemail,
 		'chatoffmessage': chatoffmessage
 	};
-	//validFields(chatmanager);
+	validFields(chatmanager);
 	validFields(chatoffObj);
 }
 
 function validFields (obj) {
 	var reg = /^([0-9a-z_\.-]+)@([0-9a-z_\.-]+)\.([a-z]{2,7})$/;
+	var arr_err = [];
 
 	for (var key in obj) {
 		if (!obj[key].value) {
 			obj[key].style.border = '1px solid red';
 			obj[key].value = 'Поле не заполнено';
+			arr_err.push(obj[key].value);
 			setTimeout(function () {
 				for (var key in obj) {
 					obj[key].value = '';
@@ -55,7 +57,10 @@ function validFields (obj) {
 			console.log(key + '-' + obj[key]);
 		}
 	}
-
+	//console.log(arr_err);
+	if (arr_err.length > 0) {
+		console.log('Здесь делаем отправку ajax на сервер!');
+	}
 
 }
 
