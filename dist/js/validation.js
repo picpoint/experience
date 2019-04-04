@@ -40,9 +40,9 @@ function validFields (obj) {
 
 	for (var key in obj) {
 		if (!obj[key].value) {
+			arr_err.push(obj[key].value);
 			obj[key].style.border = '1px solid red';
 			obj[key].value = 'Поле не заполнено';
-			arr_err.push(obj[key].value);
 			setTimeout(function () {
 				for (var key in obj) {
 					obj[key].value = '';
@@ -50,16 +50,39 @@ function validFields (obj) {
 			}, 2000);
 		} else if (key === 'chatoffemail') {
 			obj[key].style.border = '1px solid gray';
-			console.log(reg.test(obj[key].value));
+			var valid_mail = reg.test(obj[key].value);
+			if (valid_mail) {
+				obj[key] = obj[key].value;
+				console.log(obj[key]);
+			} else {
+				obj[key].style.border = '1px solid red';
+				obj[key].value = 'не корректный Email';
+			}
 		} else {
 			obj[key].style.border = '1px solid gray';
 			obj[key] = obj[key].value.replace(/\s+/g, ' ').trim();
 			console.log(key + '-' + obj[key]);
 		}
 	}
-	//console.log(arr_err);
-	if (arr_err.length > 0) {
-		console.log('Здесь делаем отправку ajax на сервер!');
+
+	console.log(arr_err);
+
+	if (arr_err.length == 0) {
+		//console.log('Здесь делаем отправку json ajax-ом на сервер!');
+		//console.log(result);
+		var xhr = new XMLHttpRequest();
+		var url = 'manager.php';
+		var result = JSON.stringify(obj);
+		xhr.responseType = 'json';
+		xhr.open('POST', url, true);
+		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		xhr.addEventListener('readystatechange', function () {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var object = xhr.response;
+				console.log(object);
+			}
+		});
+		xhr.send(result);
 	}
 
 }
