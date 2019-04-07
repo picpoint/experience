@@ -8,7 +8,7 @@ var browserSync = require('browser-sync').create();
 const settings = {
 	root: './src',
 	dist: './dist',
-	srcless: './src/less/style.less',
+	srcless: './src/less/*.less',
 	srccss: './dist/css',
 	srchtml: './dist/*.html',
 	srcjs: './src/js'
