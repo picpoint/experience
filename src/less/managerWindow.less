@@ -1,3 +1,7 @@
+body {
+	box-sizing: border-box;
+}
+
 .wrappermanager {
 	//border: 1px solid red;
 	display: flex;
@@ -57,7 +61,7 @@
 		}
 	}
 	&__username1 {
-		border: 1px solid #e1e1e1;
+		//border: 1px solid #e1e1e1;
 		display: flex;
 		height: 100px;
 	}
@@ -68,7 +72,8 @@
 		flex-direction: column;
 		justify-content: center;
 		img {
-			width: 100%;
+			width: 80%;
+			align-self: center;
 			border-radius: 50%;
 		}
 	}
@@ -93,24 +98,24 @@
 		}
 	}
 	&__username2 {
-		border: 1px solid #e1e1e1;
+		//border: 1px solid #e1e1e1;
 		display: flex;
 		height: 100px;
 	}
 	&__username3 {
-		border: 1px solid #e1e1e1;
+		//border: 1px solid #e1e1e1;
 		display: flex;
 		height: 100px;
 	}
 	&__msgs {
-		border: 1px solid green;
+		border: 1px solid #e1e1e1;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		width: 70%;
 	}
 	&__detailuser {
-		border: 1px solid red;
+		border: 1px solid #e1e1e1;
 		height: 70px;
 		display: flex;
 		flex-direction: column;
@@ -131,13 +136,40 @@
 		}
 	}
 	&__dialog {
-		border: 1px solid red;
+		border: 1px solid #e1e1e1;
 		height: 100%;
+	}
+	&__username1 {
+		border: 1px solid #e1e1e1;
+	}
+	&__avatar {
+		width: 110px;
+		img {
+			width: 80%;
+		}
+	}
+	&__info {
+		width: 100%;
+	}
+	&__admin {
+		display: flex;
+		border: 1px solid #e1e1e1;
+		img {
+			width: 93px;
+		}
 	}
 	&__sendform {
 		border: 1px solid red;
+		display: flex;
 		height: 50px;
 	}
+	&__sendfile {
+		border: 1px solid red;
+		i {
+			font-size: 2.5rem;
+		}
+	}
+
 
 }
 
